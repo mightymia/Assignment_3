@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Contact Card</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('.well').hide();
+
+			$(document).on('click', 'button', function(){
+				$('#name_card').append($('#inputFirstName').val() + ' ' + ($('#inputLastName').val()));
+				$('#description').append($('#inputDescription').val());
+				console.log($('#description').val());
+				$('.well').show();
+				$('#description').hide();
+				return false;
+			});
+			$('.well').click(function(){
+				$('#description').show();
+				$('#static').hide();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id='container'>
+		<h1 style='border-bottom: 2px solid gray'>Contact Cards</h1>
+		<form class="form-horizontal">
+  			<div class="form-group">
+    			<label for="inputFirstName" class="col-sm-2 control-label">First Name:</label>
+    			<div class="col-sm-3">
+      			<input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+    			</div>
+  			</div>
+  			<div class="form-group">
+    			<label for="inputLastName" class="col-sm-2 control-label">Last Name:</label>
+    			<div class="col-sm-3">
+      			<input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+    			</div>
+  			</div>
+  			<div class="form-group">
+    			<label for="inputDescription" class="col-sm-2 control-label">Description:</label>
+      			<div class="col-sm-4">
+          			<input id='inputDescription' type='textarea' class="form-control" rows="3" placeholder="Enter description">
+      			</div>
+    		</div>
+  			<div class="form-group">
+    			<div class="col-sm-offset-2 col-sm-10">
+      				<button type="submit" class="btn btn-info">Add User</button>
+    			</div>
+  			</div>
+		</form>
+		<div class="well" style='width:500px; margin-left: 100px'>
+			<h3 id='name_card'></h3>
+			<p id='static'>Click Here for description!</p>
+			<p id='description'></p>
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+	</div>
+</body>
+</html>
